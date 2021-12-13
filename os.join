@@ -1,0 +1,23 @@
+import os
+                                # RECONHECENDO E REDIRECIONANDO DIRETÓRIOS
+                                
+if os.path.isdir('C:'):     # Python se você reconhecer 'C:' no computador então :
+    drive = 'C:'    # O arquivo padrão do sistema sera C:
+    usuario = os.environ    # Identifique tudo que estiver nos arquivos do sistema
+    caminho = os.path.join(drive, r'\Users', usuario['Username']) # meu caminho será uma junção: C:/USUARIO/NOME_USUARIO
+    os.chdir(caminho)   # A partir de agora estamos neste novo CAMINHO
+    print(caminho)  # Me mostre o caminho que estamos agora
+    
+    
+                                    # Aqui você vai entender melhor!
+else:
+    drive = '/home'     # o mesmo principio que o acima. Meu destino fixo agora é /home
+    usuario = os.environ['SUDO_USER']       # usuario que está ativo (se você der print(os.environ)) você verá!
+    caminho = os.path.join(drive, usuario,)  # o mesmo principio, junte /home/ryan neste caso
+    os.chdir(caminho)   # a partir de agora este é meu novo CAMINHO
+
+if os.path.isdir('Downloads'):      # Python se existir 'Downloads' neste meu novo caminho então:
+    print('O diretorio existe!!')   # me mostre que existe
+
+else:
+    print('O diretorio não existe :( ')     # se não :'( just cry
